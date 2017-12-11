@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\usepackage{cite}
+
+\begin{document}
+
+\title{Graph Isomorphism}
+\author{Franklin van Nes}
+\date{Tuesday 12th November, 2017}
+\maketitle
+
+Graph Isomorphism is very much defined in its name: Iso (same) morphism (shape) of graphs.
+In more detail, two finite graphs are isomorphic if they share the same number of vertices connected in the same way.
+Formally, two finite graphs $G$ and $H$ with graph vertices $G.V$ and $H.V$ labelled $V_n = \{1, 2, 3, 4, ... , n\}$, and graph edges $G.E$ and $H.E$
+are said to be isomorphic if $f: G.V \rightarrow H.V$ is an edge-preserving bijection. Meaning
+that there exists a permutation $p$ of $V_n$ so that edges $(u, v) \in G.E \iff (p(u), p(v)) \in E.V$ ~\cite{gary-definer}.
+
+\bibliography{mybib}{}
+\bibliographystyle{abbrv}
+\end{document}
