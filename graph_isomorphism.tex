@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 12pt]{article}
+\documentclass[letterpaper, 11pt]{article}
 \usepackage{fullpage}
 \usepackage{cite}
 \usepackage{graphicx}
@@ -16,26 +16,26 @@
      same, and \textit{morphism}, meaning shape; \textit{Graph Isomorhpism} $\rightarrow$ graphs that share the same shape.
     In more detail, two finite graphs are isomorphic if they share the same number of vertices connected in the same way.
     \\\\
-    Formally, by an \textit{isomorphism} we mean from two graphs $G_1$ to $G_2$ we have a one-to-one mapping $f: G_1.V \rightarrow G_2.V$ from $G_1.V$ onto $G_2.V$ so
+    Formally, by an \textit{isomorphism} we mean from two graphs $G_1$ to $G_2$ we have a one-to-one mapping, $f: G_1.V \rightarrow G_2.V$, from $G_1.V$ onto $G_2.V$ so
     that vertices $u_1$ and $v_1$ are adjacent in $G_1$ if and only if the vertices $f(u_1)$ and $f(v_1)$ are adjacent in $G_2$.
     If an isomorphism exists between $G_1$ and $G_2$, we say they are \textit{isomorphic}~\cite{gary-definer}.
     \\\\
      Graph isomorphism is also an equivalence relation which allows us to say that $G_1$ and $G_2$ are isomorhpic if they are equal, and they are equivalent if they are isomorphic.
-    Figure \ref{graph-iso-image-figure} shows how two isomorphic graphs can look very different while still maintaining the same vertex adjacency.
+    Figure 1 shows how two isomorphic graphs can look very different while still maintaining the same vertex adjacency.
     \begin{figure}[h]
         \label{graph-iso-image-figure}
         \caption{Two isomorphic graphs. The colors indicate matching vertices, even
         if their labels do not match~\cite{wikimedia-images}}
         \centering
-        \includegraphics[scale=0.3]{graph-iso-a}
-        \includegraphics[scale=0.3]{graph-iso-b}
+        \includegraphics[scale=0.4]{graph-iso-a}
+        \includegraphics[scale=0.4]{graph-iso-b}
     \end{figure}
 
     There also exists the \textit{Subgraph Isomorphism} problems: given $G_1$ and $G_2$,
     determine if $G_2$ is a subgraph of $G_1$. However, Subgraph Isomorphism, which is definitively NP-complete~\cite{cook1971complexity},
     is a generalization of Graph Isomorphism, so we won't consider this in the same problem set as Graph Isomorphism.
-    \\
-    However, it should be noted that determining
+    \\\\
+    It should be noted that determining
     Graph Isomorphism is complex in its own right. In fact, determining graph isomorphism falls
     into its own category of problem complexity, called \textit{Graph Isomorphism Complete}.
     According to Lubiw, it has yet to fall into a typical classification, and is neither P nor NP-complete~\cite{anna-complexity}.
@@ -47,7 +47,7 @@
     \\
     \\
     While there is really just one representative problem of this class - determine if two graphs are isomorphic -
-    there are a large variety of consequential applications to solving this problem. For instance,
+    there are a large variety of consequential applications to solving this problem which I will mention instead.\\\\ For instance,
     database searches that use graphs instead of keywords. A great example of this is the biochemical search
     engine described by Bonnici et al.; Given unknown "biological networks at the molecular, protein, or species level",
     in a graph representation, how can we determine if it subject already exists in current records?
@@ -60,7 +60,9 @@
     Other applications exist in automata (comparing languages), social networks, chemical structure analysis,
     and image processing.
     \\\\
-    The best currently accepted theoretical algorithm belongs to Lazlo Babai and Eugene Luks~\cite{BabaiLuksGoodAlgorithm}.
+    The best currently accepted theoretical algorithm belongs to Lazlo Babai ~\cite{DBLP:journals/corr/Babai15}.
+    Babai's algorithm currently achieves Quasipolynomial time, represented as $2^{\lg{n}^{O(1)}}$. The $O(1)$ prevents
+    the algorithm reducing to polynomial time.
     The algorithm relies on canonical labelling of the graphs. A basic algorithm that uses canonical
     labelling for graph isomorphism would be as follows.\\\\
     Given two finite graphs with unknown isomorphism $G_1$ and $G_2$ where $|G_1.V| = |G_2.V|$, assign a count label $v.c$
